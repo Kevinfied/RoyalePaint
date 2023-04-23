@@ -34,7 +34,7 @@ header = transform.scale(header, (220, 100))
 
 # Music
 # I am loading all of the soundtracks into a list.
-playlist = ["resources/music/1.mainmenu.wav", "resources/music/2.battle1.wav", "resources/music/3.battle2.wav",
+playlist = ["resources/music/2.battle1.wav", "resources/music/2.battle1.wav", "resources/music/3.battle2.wav",
 "resources/music/4.battle3.wav", "resources/music/5.suddendeath.wav", "resources/music/6.suddendeathold.wav"]
 
 # This is the list of names for the soundtracks. Easier to dispplay.
