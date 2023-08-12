@@ -118,11 +118,32 @@ action = False # Flag for whether or not an action was done on the canvas. Whene
 omx, omy = 0, 0
 ocx, ocy = 0, 0
 
+
+## New addition
+# undo and redo functions
+def undo():
+    if len(history) > 1:
+        # The following lines takes the newest addition to the undo list, adds it to the redo list,
+        # and will then blit it on to the canvas
+        redoHistory.append(history.pop())
+        canvas.blit(history[-1], (0, 0))
+
+def redo():
+    if len(redoHistory) > 0:
+        # Takes the newest addition to the redo list, adds it to the undo list, and blits it to the canvas
+        history.append(redoHistory.pop())
+        canvas.blit(history[-1], (0, 0))
+
+
 # Main Loop
 running = True
 while running:
 
-
+    ## New addition
+    keyArr = key.get_pressed()
+    if keyArr[K_LCTRL]:
+        undoFlag = True
+        redoFlag = True
 
     ## Drawing the buttons
     screen.blit(pencilIcon, (pencilRect))
@@ -145,6 +166,10 @@ while running:
     screen.blit(playIcon, (playRect))
     screen.blit(clearIcon, (clearRect))
 
+
+    # For Ctrl z and y
+    # undoFlag = False
+    # redoFlag = False
 
     # Resetting the addCol flag
     addCol = False
@@ -169,6 +194,21 @@ while running:
 
 
         if evt.type == KEYDOWN:
+            ## New addition
+            # Ctrl Z and Y
+            # if evt.key == K_LCTRL:
+            #     redoFlag = True
+            #     undoFlag = True
+            #     # if evt.key == K_z:
+            #     #     undo()
+            #     # elif keyArr[K_y]:
+            #     #     redo()
+            if evt.key == K_z:
+                if undoFlag:
+                    undo()
+            if evt.key == K_y:
+                if redoFlag:
+                    redo()
             # Hotkey for exiting the program
             if evt.key == K_ESCAPE:
                 running = False
@@ -247,17 +287,19 @@ while running:
                         playing = True
 
                 if undoRect.collidepoint(mx, my):
-                    if len(history) > 1:
-                        # The following lines takes the newest addition to the undo list, adds it to the redo list,
-                        # and will then blit it on to the canvas
-                        redoHistory.append(history.pop())
-                        canvas.blit(history[-1], (0, 0))
+                    undo()
+# """                    if len(history) > 1:
+#                         # The following lines takes the newest addition to the undo list, adds it to the redo list,
+#                         # and will then blit it on to the canvas
+#                         redoHistory.append(history.pop())
+#                         canvas.blit(history[-1], (0, 0))"""
 
                 if redoRect.collidepoint(mx, my):
-                    if len(redoHistory) > 0:
-                        # Takes the newest addition to the redo list, adds it to the undo list, and blits it to the canvas
-                        history.append(redoHistory.pop())
-                        canvas.blit(history[-1], (0, 0))
+                    redo()
+                    # if len(redoHistory) > 0:
+                    #     # Takes the newest addition to the redo list, adds it to the undo list, and blits it to the canvas
+                    #     history.append(redoHistory.pop())
+                    #     canvas.blit(history[-1], (0, 0))
 
                 if saveRect.collidepoint(mx, my):
                     saveName = filedialog.asksaveasfilename()
@@ -362,6 +404,8 @@ while running:
                     color = pastCols[-3]
                 if oldCol3.collidepoint(mx, my):
                     color = pastCols[-4]
+
+
 
 
     # Mouse Position
