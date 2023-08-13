@@ -142,8 +142,7 @@ while running:
     ## New addition
     keyArr = key.get_pressed()
     if keyArr[K_LCTRL]:
-        undoFlag = True
-        redoFlag = True
+        ctrlFlag = True
 
     ## Drawing the buttons
     screen.blit(pencilIcon, (pencilRect))
@@ -204,10 +203,10 @@ while running:
             #     # elif keyArr[K_y]:
             #     #     redo()
             if evt.key == K_z:
-                if undoFlag:
+                if ctrlFlag:
                     undo()
             if evt.key == K_y:
-                if redoFlag:
+                if ctrlFlag:
                     redo()
             # Hotkey for exiting the program
             if evt.key == K_ESCAPE:
