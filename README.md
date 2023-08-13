@@ -1,13 +1,13 @@
-# Royale Paint
+# Royale Paint <br />
 March 31, 2023
 
-Paint Project
-Kevin Xu
+Paint Project for Grade 11 Computer Science class<br />
+Kevin Xu <br />
 
-Good copy finished on April 21, 2023
+Good copy finished on April 21, 2023 <br />
 
 
-This is a Clash Royale themed Paint program made with Pygame.
+This is a Clash Royale themed Paint program made with Pygame. <br />
 Features include:
 - Basic paint tools (brush, eraser, pencil, fill)
 - A color picker tool and highlighter tool
@@ -24,19 +24,14 @@ Features include:
 
 
 
-
-** I do not own any of the pictures and music used in this program. All rights go to their respective owners. **
-
-Website where I downloaded the font:
+Font: <br />
 https://thefontsmagazine.com/font/clash-royale-font/
 
-Icons:
-www.flaticon.com
 
-Music:
-Youtube
 
-Third-party software used:
-    - Paint.net (To edit the images)
-    - Audacity (To trim the music and sounds)
-    - Adobe Photoshop (To edit the images)
+
+
+Software used: <br />
+    - Paint.net <br />
+    - Audacity <br />
+    - Adobe Photoshop <br />
