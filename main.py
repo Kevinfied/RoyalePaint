@@ -134,6 +134,17 @@ def redo():
         history.append(redoHistory.pop())
         canvas.blit(history[-1], (0, 0))
 
+def loadBackground():
+    # Lets the user choose the image that they want to load. If the user chose an image, it will
+    # load the image and scale it to the size of the canvas, and will then blit it to the canvas.
+    loadName = filedialog.askopenfilename()
+    if loadName != "":  # Makes sure that the user didnt just quit and chose nothing
+        userBackground = image.load(loadName)
+        userBackground = transform.scale(userBackground, (canvas.get_width(), canvas.get_height()))
+        canvas.blit(userBackground, (0, 0))
+        customCanvas = True  # The user has uploaded their own custom background.
+        # This will be used for the eraser tool and the clear cavans function.
+
 
 # Main Loop
 running = True
@@ -141,29 +152,14 @@ while running:
 
     ## New addition
     keyArr = key.get_pressed()
+    # If ctrl key is held
     if keyArr[K_LCTRL]:
         ctrlFlag = True
 
     ## Drawing the buttons
-    screen.blit(pencilIcon, (pencilRect))
-    screen.blit(eraserIcon, (eraserRect))
-    screen.blit(brushIcon, (brushRect))
-    screen.blit(sprayIcon, (sprayRect))
-    screen.blit(dropperIcon, (dropperRect))
-    screen.blit(highlighterIcon, (highlighterRect))
-    screen.blit(calligraphyIcon, (calligraphyRect))
-    screen.blit(bucketIcon, (bucketRect))
-    screen.blit(lineIcon, (lineRect))
-    screen.blit(rectangleIcon, (rectangleRect))
-    screen.blit(ellipseIcon, (ellipseRect))
-    screen.blit(undoIcon, (undoRect))
-    screen.blit(redoIcon, (redoRect))
-    screen.blit(saveIcon, (saveRect))
-    screen.blit(loadIcon, (loadRect))
-    screen.blit(backIcon, (backRect))
-    screen.blit(nextIcon, (nextRect))
-    screen.blit(playIcon, (playRect))
-    screen.blit(clearIcon, (clearRect))
+    for asset in assetsList:
+        screen.blit(asset[0], asset[1])
+
 
 
     # For Ctrl z and y
@@ -301,21 +297,10 @@ while running:
                     #     canvas.blit(history[-1], (0, 0))
 
                 if saveRect.collidepoint(mx, my):
-                    saveName = filedialog.asksaveasfilename()
-                    if saveName != "":     # If the user didn't cancel the save, save the image
-                        image.save(canvas, saveName)
+                    saveFile(canvas)
 
                 if loadRect.collidepoint(mx, my):
-                    # Lets the user choose the image that they want to load. If the user chose an image, it will
-                    # load the image and scale it to the size of the canvas, and will then blit it to the canvas.
-                    loadName = filedialog.askopenfilename()
-                    if loadName != "": # Makes sure that the user didnt just quit and chose nothing
-                        userBackground = image.load(loadName)
-                        userBackground = transform.scale(userBackground, (canvas.get_width(), canvas.get_height()))
-                        canvas.blit(userBackground, (0, 0))
-                        customCanvas = True     # The user has uploaded their own custom background. 
-                                                # This will be used for the eraser tool and the clear cavans function. 
-
+                    loadBackground()
                 # Checks which tool the user selects
                 if pencilRect.collidepoint(mx, my):
                     tool = "pencil"

@@ -220,6 +220,24 @@ sizeTextRect.center = (85, 710)   # Setting the center of the text to (85, 710)
 
 
 
-
+assetsList = [ [pencilIcon,pencilRect],
+    [eraserIcon, (eraserRect)],
+    [brushIcon, (brushRect)],
+    [sprayIcon, (sprayRect)],
+    [dropperIcon, (dropperRect)],
+    [highlighterIcon, (highlighterRect)],
+    [calligraphyIcon, (calligraphyRect)],
+    [bucketIcon, (bucketRect)],
+    [lineIcon, (lineRect)],
+    [rectangleIcon, (rectangleRect)],
+    [ellipseIcon, (ellipseRect)],
+    [undoIcon, (undoRect)],
+    [redoIcon, (redoRect)],
+    [saveIcon, (saveRect)],
+    [loadIcon, (loadRect)],
+    [backIcon, (backRect)],
+    [nextIcon, (nextRect)],
+    [playIcon, (playRect)],
+    [clearIcon, (clearRect)]]
 
 

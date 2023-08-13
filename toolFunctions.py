@@ -8,6 +8,8 @@ This is where I define all the tool functions for the program.
 from pygame import *
 from random import *
 from math import *
+from tkinter import *
+from tkinter import filedialog
 
 
 # Pre defined colors
@@ -303,3 +305,9 @@ def clearCanva(surface, custom, userBackground):
     if custom:
         surface.blit(userBackground, (0,0))
 
+
+
+def saveFile(surface):
+    saveName = filedialog.asksaveasfilename()
+    if saveName != "":  # If the user didn't cancel the save, save the image
+        image.save(surface, saveName)
