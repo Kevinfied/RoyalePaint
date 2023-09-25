@@ -31,7 +31,10 @@ https://thefontsmagazine.com/font/clash-royale-font/
 
 
 
-Software used: <br />
-    - Paint.net <br />
-    - Audacity <br />
-    - Adobe Photoshop <br />
+[//]: # (Software used: <br />)
+
+[//]: # (    - Paint.net <br />)
+
+[//]: # (    - Audacity <br />)
+
+[//]: # (    - Adobe Photoshop <br />)
