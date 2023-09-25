@@ -8,19 +8,32 @@ Good copy finished on April 21, 2023 <br />
 
 
 This is a Clash Royale themed Paint program made with Pygame. <br />
-Features include:
-- Basic paint tools (brush, eraser, pencil, fill)
-- A color picker tool and highlighter tool
-- A spray can effect and a calligraphy pen
-- Basic shapes (rectangle, circle, line). Both unfilled and filled
-- Multiple stamps (Each representing a Clash Royale emote)
-- Option to upload your own background for the canvas
-- Download your canvas as an image
-- Undo, redo, and clear canvas
-- A color map + a grayscale color map
-- Saves your last three used colors (not including the current color)
-- A slider that allows the user to change their tool size
-- A playlist of music. Including music controls
+
+[//]: # (Features include:)
+
+[//]: # (- Basic paint tools &#40;brush, eraser, pencil, fill&#41;)
+
+[//]: # (- A color picker tool and highlighter tool)
+
+[//]: # (- A spray can effect and a calligraphy pen)
+
+[//]: # (- Basic shapes &#40;rectangle, circle, line&#41;. Both unfilled and filled)
+
+[//]: # (- Multiple stamps &#40;Each representing a Clash Royale emote&#41;)
+
+[//]: # (- Option to upload your own background for the canvas)
+
+[//]: # (- Download your canvas as an image)
+
+[//]: # (- Undo, redo, and clear canvas)
+
+[//]: # (- A color map + a grayscale color map)
+
+[//]: # (- Saves your last three used colors &#40;not including the current color&#41;)
+
+[//]: # (- A slider that allows the user to change their tool size)
+
+[//]: # (- A playlist of music. Including music controls)
 
 
 
